@@ -1,20 +1,14 @@
 <?php 
 
-$out=[];
 
-// $url = "https://www.youtube.com/watch?v=wE2OMbAZu-M";
-// $url="https://css-tricks.com/essential-meta-tags-social-media/";
- $burl="https://www.youtube.com/watch?v=ehjoh_MmE9A";
-// $url="https://getbootstrap.com";
-
+$burl="https://www.youtube.com/watch?v=ehjoh_MmE9A";
 $tags=get_meta_tags($burl);
-echo "<br>";
+
 
 
 echo"<br>------------------------------------------------------<br>";
 
-// echo preg_match("/<title>([a-z 0-9]*)<\/title>/si", $tags, $out) ? $out[0] : 'no match';
-// $result=preg_grep ('/<title>([a-z 0-9]*)<\/title>/si', $tags ); 
+
  $resultimg=preg_grep ('/.png|.jpeg|.jpg/', $tags ); 
 print_r($resultimg); 
 echo "_______________________________________________<br>";
@@ -25,7 +19,7 @@ echo current($resultimg);
 $resultdescription = $tags['description'];
 echo "<br> Description is : ".$resultdescription;
 
-// TODO GET TITLE !
+// TODO GET TITLE ! functie geleend van internet die met curl werkt
 
 function website_title($url) {
    $ch = curl_init();
@@ -42,7 +36,7 @@ function website_title($url) {
    $title = $dom->getElementsByTagName('title')->item('0')->nodeValue;
    return $title;
 }
-echo "<br>";
+
 echo "test met functie curl <br>";
 echo website_title($burl);
 
