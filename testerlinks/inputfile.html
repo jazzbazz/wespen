@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>put a link</title>
+
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+    header, footer {
+		width: 100vw;
+		height: 120px;
+		background: darkslateblue;
+		color: white;
+
+	}
+
+	form {
+		display: flex;
+		flex-direction : column;
+		justify-content: space-around;
+		height: 100%;
+	}
+
+	.inp, input[type="submit"] {
+		display: block;
+		width: 100%;
+		border: 1px solid green;
+	}
+
+	.inp{
+		min-height: 80px;
+		border: 2px solid gold;
+	}
+	input[type="submit"]{
+		min-height: 80px;
+		color: white;
+		font-size: 2em;
+		text-align : center;
+		line-height: 80px;
+		border-radius: 5px;
+		border: 5px solid darkorange;
+		background: limegreen;
+		width: 60vw;
+		margin: 0 auto;
+		cursor: pointer;
+	}
+
+	select, .author {
+		flex-basis: 25%;
+		border: 2px solid darkslateblue;
+		position: relative;
+
+	}
+
+	.author {
+		border: ;
+	}
+
+	
+
+	.container {
+		width: 60vw;
+		margin:0 auto;
+		height: calc(100vh - 240px);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.inputfield {
+		width: 100%;
+		min-height: 200px
+		flex-basis: 100%;
+		border: 1px solid gold;
+		margin-top: 20px;
+
+	}
+
+	.handlers {
+		display: flex;
+		min-height: 200px;
+		flex-direction: row;
+		justify-content: space-around;
+		/*margin: 20px 0;*/
+	}
+	.submitter {
+		margin: 20px 0;
+		cursor: pointer;
+
+	}
+	
+	
+</style>
+
+<body>
+    <header></header>
+    <div class="container">
+        <form action="verwerklink.php" method="POST">
+            <div class="inputfield">
+            	<!-- <label for="link">Plaats hier uw link</label> -->
+                <input type="text" name="link" id="link" class="inp textinp" placeholder="Plaats hier uw link..." required>
+            </div>
+            <div class="handlers">
+            	<!-- <label for="categorie">Categorie</label> -->
+                <select name="categorie" id="categorie" required>
+                	<!-- <label for="categorie">Categorie</label> -->
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JS">JavaScript</option>
+                    <option value="jQuery">jQuery</option>
+                    <option value="PHP">PHP</option>
+                    <option value="MySQL">MySQL</option>
+                    <option value="Python">Python</option>
+                    <option value="Bootstrap">Bootstrap</option>
+                    <option value="SCSS & SASS">SCSS & Sass</option>
+                    <option value="Firebase">Firebase</option>
+                    <option value="Vue JS">Vue Js</option>
+                    <option value="Laravel">Laravel</option>
+                    <option value="Wordpress">Wordpress</option>
+                    <option value="Animation">Animation</option>
+                    <option value="SVG">SVG</option>
+                    <option value="otherCategorie">Other...</option>
+                </select>
+                
+                <select name="source" id="bron" required>
+                	<!-- <label for="bron">Bron</label> -->
+                    <optgroup label="school" name="subsourceSchool">
+                        <option value="Stef">Stef</option>
+                        <option value="Peter">Peter</option>
+                        <option value="DannyT">Danny T</option>
+                        <option value="Danny W">Danny ?</option>
+                        <option value="Obelisk">Obelisk</option>
+                        <option value="Student">Student</option>
+                        <option value="otherSchoolsource">other...</option>
+                    </optgroup>
+                <!-- </select>
+                <select name="subsourceOwn" id="" required>own -->
+                    <optgroup label="home">
+                        <option value="fromNet">from net</option>
+                        <option value="fromBook">from book</option>
+                        <option value="Other">other</option>
+                    </optgroup>
+                </select>
+                
+                <select name="posttype" id="posttype" required>
+                	<!-- <label for="posttype">Type</label> -->
+                    <optgroup label="type">
+                        <option value="www">www</option>
+                        <option value="pdf">pdf</option>
+                        <option value="doc">doc</option>
+                        <option value="otherType">Other</option>
+                    </optgroup>
+                   </select>
+                   <!-- <label for="author">Author</label> -->
+                   <input type="text" name="author" class="author" id="author">
+            </div>
+            <div class="submitter">
+                
+                <input type="submit" name="submit" value="send the mf">
+            </div>
+        </form>
+    </div>
+    <footer></footer>
+</body>
+
+</html>
